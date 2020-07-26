@@ -2,28 +2,28 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav"
-    app:startDestination="@id/cityListFragment">
+    app:startDestination="@id/countryListFragment">
 
     <fragment
-        android:id="@+id/cityListFragment"
-        android:name="com.v15h4l.vishalpoc.ui.city_list.view.CityListFragment"
-        android:label="CityListFragment">
+        android:id="@+id/countryListFragment"
+        android:name="com.v15h4l.vishalpoc.ui.country_list.view.CountryListFragment"
+        android:label="CountryListFragment">
 
         <action
-            android:id="@+id/actionCityListFragmentToCityDetailsFragment"
-            app:destination="@id/cityDetailsFragment"
+            android:id="@+id/actionCountryListFragmentToCountryDetailsFragment"
+            app:destination="@id/countryDetailsFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/cityDetailsFragment"
-        android:name="com.v15h4l.vishalpoc.ui.city_details.CityDetailsFragment"
-        android:label="CityDetailsFragment">
+        android:id="@+id/countryDetailsFragment"
+        android:name="com.v15h4l.vishalpoc.ui.country_details.view.CountryDetailsFragment"
+        android:label="CountryDetailsFragment">
         <argument
-            android:name="city"
-            app:argType="com.v15h4l.vishalpoc.model.City" />
+            android:name="country"
+            app:argType="com.v15h4l.vishalpoc.model.Country" />
     </fragment>
 
 </navigation>

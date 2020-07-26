@@ -1,15 +1,16 @@
 <resources>
-    <string name="label_city_list">City List (%1$s)</string>
-    <string name="label_city_details">City Details</string>
+    <string name="label_country_list">Country List (%1$s)</string>
+    <string name="label_country_details">Country Details</string>
     <string name="action_filter">Filter</string>
     <string name="message_error_internet">Internet is not Available.</string>
     <string name="text_retry">Retry</string>
 
     <string name="navigate_up" translation-description="Arrow at the top left of the screen for navigation">Navigate up</string>
 
-    <!-- City Details Placeholders -->
-    <string name="field_city_lat_long">LatLong: %1$s</string>
-    <string name="field_city_borders">Borders: %1$s</string>
-    <string name="field_city_languages">Languages: %1$s</string>
+    <!-- Country Details Placeholders -->
+    <string name="field_country_lat_long">LatLong: %1$s</string>
+    <string name="field_country_borders">Borders: %1$s</string>
+    <string name="field_country_languages">Languages: %1$s</string>
+    <string name="not_country_message">World Seems Closed, No Country Found.\nYou can try Refreshing the Screen.</string>
 
 </resources>

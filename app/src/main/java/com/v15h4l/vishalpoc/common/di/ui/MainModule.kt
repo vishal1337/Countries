@@ -1,9 +1,9 @@
 package com.v15h4l.vishalpoc.common.di.ui
 
 import com.v15h4l.vishalpoc.common.di.config.qualifier.PerActivity
-import com.v15h4l.vishalpoc.common.di.ui.city_details.CityDetailsFragmentModule
-import com.v15h4l.vishalpoc.common.di.ui.city_list.CityListFragmentModule
 import com.v15h4l.vishalpoc.ui.MainActivity
+import com.v15h4l.vishalpoc.ui.country_details.di.CountryDetailsFragmentModule
+import com.v15h4l.vishalpoc.ui.country_list.di.CountryListFragmentModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -13,8 +13,8 @@ abstract class MainModule {
     @PerActivity
     @ContributesAndroidInjector(
         modules = [
-            CityListFragmentModule::class,
-            CityDetailsFragmentModule::class
+            CountryListFragmentModule::class,
+            CountryDetailsFragmentModule::class
         ]
     )
     abstract fun provideMainActivity(): MainActivity

@@ -3,7 +3,7 @@ package com.v15h4l.vishalpoc.common.di.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.v15h4l.vishalpoc.common.di.config.qualifier.ViewModelKey
-import com.v15h4l.vishalpoc.ui.city_list.viewmodel.CityListViewModel
+import com.v15h4l.vishalpoc.ui.country_list.viewmodel.CountryListViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -16,7 +16,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(CityListViewModel::class)
-    internal abstract fun bindCityListViewModel(viewModel: CityListViewModel): ViewModel
+    @ViewModelKey(CountryListViewModel::class)
+    internal abstract fun bindCountryListViewModel(viewModel: CountryListViewModel): ViewModel
 
 }

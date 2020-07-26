@@ -1,9 +1,14 @@
 package com.v15h4l.vishalpoc.common.di.network
 
 import com.v15h4l.vishalpoc.BuildConfig
-import com.v15h4l.vishalpoc.data.city.CityRepository
-import com.v15h4l.vishalpoc.data.city.CityRepositoryImpl
-import com.v15h4l.vishalpoc.data.city.CityService
+import com.v15h4l.vishalpoc.common.di.config.qualifier.LocalCountryDataSource
+import com.v15h4l.vishalpoc.common.di.config.qualifier.RemoteCountryDataSource
+import com.v15h4l.vishalpoc.data.country.CountryDataSource
+import com.v15h4l.vishalpoc.data.country.CountryRepository
+import com.v15h4l.vishalpoc.data.country.local.CountryDao
+import com.v15h4l.vishalpoc.data.country.local.CountryLocalDataSource
+import com.v15h4l.vishalpoc.data.country.remote.CountryRemoteDataSource
+import com.v15h4l.vishalpoc.data.country.remote.CountryService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -60,11 +65,25 @@ class NetworkModule {
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor()
 
     @Provides
-    fun provideCityService(retrofit: Retrofit): CityService =
-        retrofit.create(CityService::class.java)
+    fun provideCountryService(retrofit: Retrofit): CountryService =
+        retrofit.create(CountryService::class.java)
+
+    @Singleton
+    @LocalCountryDataSource
+    @Provides
+    fun provideCountryLocalDataSource(countryDao: CountryDao): CountryDataSource =
+        CountryLocalDataSource(countryDao)
+
+    @Singleton
+    @RemoteCountryDataSource
+    @Provides
+    fun provideCountryRemoteDataSource(countryService: CountryService): CountryDataSource =
+        CountryRemoteDataSource(countryService)
 
     @Provides
-    fun provideCityRepository(cityService: CityService): CityRepository =
-        CityRepositoryImpl(cityService)
+    fun provideCountryRepository(
+        localDataSource: CountryLocalDataSource,
+        remoteDataSource: CountryRemoteDataSource
+    ): CountryRepository = CountryRepository(localDataSource, remoteDataSource)
 
 }

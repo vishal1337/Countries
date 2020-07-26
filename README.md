@@ -1,19 +1,19 @@
-## Showing City Data
+## Showing Country Data
 
-Poc app which showcases a List of cities using Web Based APIs and Local Database in case of No Internet
+Poc app which showcases a List of countries using Web Based APIs and Local Database in case of No Internet
 
-[Download (Dev)](https://github.com/vishal1337/Cities/raw/master/apk_file/app_debug_dev.apk) APK to try the App
-[Download (QA)](https://github.com/vishal1337/Cities/raw/master/apk_file/app_debug_qa.apk)
-[Download (Prod)](https://github.com/vishal1337/Cities/raw/master/apk_file/app_debug_prod.apk)
+[Download (Dev)](https://github.com/vishal1337/Countries/raw/master/apk_file/app_debug_dev.apk) APK to try the App
+[Download (QA)](https://github.com/vishal1337/Countries/raw/master/apk_file/app_debug_qa.apk)
+[Download (Prod)](https://github.com/vishal1337/Countries/raw/master/apk_file/app_debug_prod.apk)
 
 <table>
   <tr>
-    <td>City List</td>
-    <td>City Details</td>
+    <td>Country List</td>
+    <td>Country Details</td>
   </tr>
   <tr>
-    <td><img src="screenshots/city_list.png" width=270 height=480></td>
-    <td><img src="screenshots/city_details.png" width=270 height=480></td>
+    <td><img src="screenshots/country_list.png" width=270 height=480></td>
+    <td><img src="screenshots/country_details.png" width=270 height=480></td>
   </tr>
 </table>
 
