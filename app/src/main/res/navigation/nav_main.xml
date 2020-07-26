@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/cityListFragment">
+
+    <fragment
+        android:id="@+id/cityListFragment"
+        android:name="com.v15h4l.vishalpoc.ui.city_list.view.CityListFragment"
+        android:label="CityListFragment">
+
+        <action
+            android:id="@+id/actionCityListFragmentToCityDetailsFragment"
+            app:destination="@id/cityDetailsFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cityDetailsFragment"
+        android:name="com.v15h4l.vishalpoc.ui.city_details.CityDetailsFragment"
+        android:label="CityDetailsFragment">
+        <argument
+            android:name="city"
+            app:argType="com.v15h4l.vishalpoc.model.City" />
+    </fragment>
+
+</navigation>

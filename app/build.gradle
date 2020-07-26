@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.v15h4l.vishalpoc"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://restcountries-v1.p.rapidapi.com/\"")
+        buildConfigField("String", "X_RAPIDAPI_HOST", "\"restcountries-v1.p.rapidapi.com\"")
+        buildConfigField("String", "X_RAPIDAPI_KEY", "\"475eebcce4msh1e04982ca510f1bp148de4jsn7d672619f9c0\"")
+        buildConfigField("String", "USE_QUERY_STRING", "\"true\"")
+
+    }
+
+    buildTypes {
+        buildTypes {
+            debug {
+                minifyEnabled false
+                shrinkResources false
+                debuggable true
+                applicationIdSuffix ".debug"
+                versionNameSuffix "-DEBUG"
+                signingConfig android.signingConfigs.debug
+            }
+            release {
+                minifyEnabled false
+                shrinkResources false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+    }
+
+
+    flavorDimensions "version"
+
+    productFlavors {
+        dev {
+            dimension "version"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+
+            buildConfigField("String", "BASE_URL", "\"https://restcountries-v1.p.rapidapi.com/\"")
+            buildConfigField("String", "REGION", "\"Asia\"")
+
+            resValue "string", "app_name", "VishalPocDev"
+        }
+
+        qa {
+            dimension "version"
+            applicationIdSuffix ".qa"
+            versionNameSuffix "-qa"
+
+            buildConfigField("String", "BASE_URL", "\"https://restcountries-v1.p.rapidapi.com/\"")
+            buildConfigField("String", "REGION", "\"Americas\"")
+
+            resValue "string", "app_name", "VishalPocQA"
+        }
+
+        prod {
+            dimension "version"
+            applicationIdSuffix ".prod"
+            versionNameSuffix "-prod"
+
+            buildConfigField("String", "BASE_URL", "\"https://restcountries-v1.p.rapidapi.com/\"")
+            buildConfigField("String", "REGION", "\"Asia\"")
+
+            resValue "string", "app_name", "VishalPocProd"
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // Dependency Injection
+    implementation 'com.google.dagger:dagger:2.27'
+    implementation 'com.google.dagger:dagger-android-support:2.27'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt 'com.google.dagger:dagger-compiler:2.27'
+    kapt 'com.google.dagger:dagger-android-processor:2.27'
+
+    // Coroutine
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha05' //ViewModel Scope
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha05'   //LifeCycle Scope
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha05'  //LiveData Scope
+
+    // Logging
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //View
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta8'
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
+    // Networking
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
