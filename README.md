@@ -2,9 +2,9 @@
 
 Poc app which showcases a List of countries using Web Based APIs and Local Database in case of No Internet
 
-Download [(Dev)](https://github.com/vishal1337/Countries/raw/master/apk_file/app_dev_debug.apk)
-[(QA)](https://github.com/vishal1337/Countries/raw/master/apk_file/app_qa_debug.apk)
-[(Prod)](https://github.com/vishal1337/Countries/raw/master/apk_file/app_prod_debug.apk) APK to try the App
+Download [(Dev)](https://github.com/vishal1337/Countries/raw/master/apk_files/app_dev_debug.apk)
+[(QA)](https://github.com/vishal1337/Countries/raw/master/apk_files/app_qa_debug.apk)
+[(Prod)](https://github.com/vishal1337/Countries/raw/master/apk_files/app_prod_debug.apk) APK to try the App
 
 <table>
   <tr>
