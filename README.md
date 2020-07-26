@@ -28,6 +28,7 @@ Download [(Dev)](https://github.com/vishal1337/Countries/raw/master/apk_files/ap
 - Kotlin - Language used to write this Project
 - Coroutines - To make use of suspend functions while making API calls
 - Retrofit - Network Library
+- Room - Wrapper for SQLIte
 - GSON - Json Parsing Library
 - Timber - Used for Logging
 - Data Binding - To avoid boilerplate and attach the View to LiveData directly.
