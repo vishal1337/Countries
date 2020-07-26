@@ -43,7 +43,7 @@ data class CountryDto(
 }
 
 
-// Covert Dto to Normal Country Object
+// Covert Dto to Normal Country Object Mapper
 fun CountryDto.toCountry(): Country {
     return Country(
         numericCode,

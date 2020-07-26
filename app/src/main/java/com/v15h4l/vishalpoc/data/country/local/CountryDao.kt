@@ -12,7 +12,7 @@ interface CountryDao {
     @Query("SELECT * FROM Countries")
     fun getCountries(): List<Country>
 
-    @Query("SELECT * FROM countries WHERE region = :region")
+    @Query("SELECT * FROM Countries WHERE region = :region")
     fun getCountriesByRegion(region: String): List<Country>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -24,10 +24,10 @@ interface CountryDao {
     @Update
     fun updateCountry(country: Country): Int
 
-    @Query("DELETE FROM countries WHERE numericCode = :numericCode")
+    @Query("DELETE FROM Countries WHERE numericCode = :numericCode")
     fun deleteCountryById(numericCode: String): Int
 
-    @Query("DELETE FROM countries")
+    @Query("DELETE FROM Countries")
     fun deleteCountries()
 
 }
